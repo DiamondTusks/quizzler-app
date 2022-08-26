@@ -24,14 +24,14 @@ class QuizInterface:
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
 
         correct_button_img = PhotoImage(file="images/true.png")
-        correct_button = Button(image=correct_button_img, highlightthickness=0,command=self.correct_pressed)
-        correct_button.grid(row=2, column=0)
+        self.correct_button = Button(image=correct_button_img, highlightthickness=0,command=self.correct_pressed)
+        self.correct_button.grid(row=2, column=0)
         wrong_button_img = PhotoImage(file="images/false.png")
-        wrong_button = Button(image=wrong_button_img, highlightthickness=0, command=self.wrong_pressed)
-        wrong_button.grid(row=2, column=1)
+        self.wrong_button = Button(image=wrong_button_img, highlightthickness=0, command=self.wrong_pressed)
+        self.wrong_button.grid(row=2, column=1)
 
-        score_label = Label(text=f"Score: 0", fg="white", bg=THEME_COLOR)
-        score_label.grid(row=0, column=1)
+        self.score_label = Label(text=f"Score: 0", fg="white", bg=THEME_COLOR)
+        self.score_label.grid(row=0, column=1)
 
         self.get_next_question()
 
